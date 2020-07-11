@@ -1,0 +1,17 @@
+{% comment %}
+    Renders a list of menu items
+    Accepts:
+    - linklist: {Object} Linklist Liquid object (required)
+
+    Usage:
+    {% include 'nav', linklist: section.settings.main_linklist %}
+{% endcomment %}
+<ul>
+  {% for link in linklists[linklist].links %}
+    <li> 
+      <a href="{{ link.url }}"> 
+        {{ link.title | escape }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
