@@ -5,15 +5,23 @@
     </a></div>
   {% endif %}
   {% if settings.social_twitter_link != blank %}
-    <div><a href="{{ settings.social_twitter_link | escape }}">Twitter</a></div>
+    <div><a href="{{ settings.social_twitter_link | escape }}">
+      {%- render 'icon-twitter' -%}
+    </a></div>
   {% endif %}
   {% if settings.social_instagram_link != blank %}
-    <div><a href="{{ settings.social_instagram_link | escape }}">Instagram</a></div>
+    <div><a href="{{ settings.social_instagram_link | escape }}">
+      {%- render 'icon-instagram' -%}
+    </a></div>
   {% endif %}
   {% if settings.social_pinterest_link != blank %}
-    <div><a href="{{ settings.social_pinterest_link | escape }}">Pinterest</a></div>
+    <div><a href="{{ settings.social_pinterest_link | escape }}">
+      {%- render 'icon-pinterest' -%}
+    </a></div>
   {% endif %}
   {% if settings.social_youtube_link != blank %}
-    <div><a href="{{ settings.social_youtube_link | escape }}">Youtube</a></div>
+    <div><a href="{{ settings.social_youtube_link | escape }}">
+      {%- render 'icon-youtube' -%}
+    </a></div>
   {% endif %}
 </div>
