@@ -1,19 +1,19 @@
-<div>
-  <ul>
-    {% if settings.social_facebook_link != blank %}
-      <li><a href="{{ settings.social_facebook_link | escape }}">Facebook</a></li>
-    {% endif %}
-    {% if settings.social_twitter_link != blank %}
-      <li><a href="{{ settings.social_twitter_link | escape }}">Twitter</a></li>
-    {% endif %}
-    {% if settings.social_instagram_link != blank %}
-      <li><a href="{{ settings.social_instagram_link | escape }}">Instagram</a></li>
-    {% endif %}
-    {% if settings.social_pinterest_link != blank %}
-      <li><a href="{{ settings.social_pinterest_link | escape }}">Pinterest</a></li>
-    {% endif %}
-    {% if settings.social_youtube_link != blank %}
-      <li><a href="{{ settings.social_youtube_link | escape }}">Youtube</a></li>
-    {% endif %}
-  </ul>
+<div class='socials-container'>
+  {% if settings.social_facebook_link != blank %}
+    <div><a href="{{ settings.social_facebook_link | escape }}">
+      {%- render 'icon-facebook' -%}
+    </a></div>
+  {% endif %}
+  {% if settings.social_twitter_link != blank %}
+    <div><a href="{{ settings.social_twitter_link | escape }}">Twitter</a></div>
+  {% endif %}
+  {% if settings.social_instagram_link != blank %}
+    <div><a href="{{ settings.social_instagram_link | escape }}">Instagram</a></div>
+  {% endif %}
+  {% if settings.social_pinterest_link != blank %}
+    <div><a href="{{ settings.social_pinterest_link | escape }}">Pinterest</a></div>
+  {% endif %}
+  {% if settings.social_youtube_link != blank %}
+    <div><a href="{{ settings.social_youtube_link | escape }}">Youtube</a></div>
+  {% endif %}
 </div>

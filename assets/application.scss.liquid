@@ -1,0 +1,115 @@
+/*================ BREAKPOINTS ==============*/
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+
+/*================ COLORS ===================*/
+
+// Page Colours
+$color-background: {{ settings.background_color }};
+$color-sidebar: {{ settings.sidebar_color }};
+$color-accent: {{ settings.accent_color }};
+$color-secondary-accent: {{ settings.secondary_accent_color }};
+
+// Text Colours
+$color-main: {{ settings.main_text_color }};
+$color-subheading: {{ settings.subheading_text_color }};
+$color-secondary: {{ settings.secondary_text_color }};
+
+/*================ TYPOGRAPHY ================*/
+
+{% assign header_font = settings.type_header_font %}
+{% assign subheader_font = settings.type_subheader_font %}
+{% assign body_font = settings.type_body_font %}
+
+{{ header_font | font_face }}
+{{ subheader_font | font_face }}
+{{ body_font | font_face }}
+
+$face-heading: {{ header_font.family }}, {{ header_font.fallback_families}};
+$face-subheading: {{ subheader_font.family }}, {{ subheader_font.fallback_families }};
+$face-body: {{ body_font.family }}, {{ body_font.fallback_families }};
+
+$weight-heading: {{ header_font.weight }};
+$weight-subheading: {{ subheader_font.weight }};
+$weight-body: {{ body_font.weight }};
+
+$size-heading: {{ settings.type_header_base_size }} * 1px;
+$size-subheading: {{ settings.type_subheader_base_size }} * 1px;
+$size-body: {{ settings.type_body_base_size }} * 1px;
+
+.heading {
+  font-family: $face-heading;
+  font-weight: $weight-heading;
+  font-size: $size-heading;
+  color: $color-main;
+}
+
+.subheading {
+  font-family: $face-subheading;
+  font-weight: $weight-subheading;
+  font-size: $size-subheading;
+  color: $color-subheading;
+}
+
+.body {
+  font-family: $face-body;
+  font-weight: $weight-body;
+  font-size: $size-body;
+  color: $color-main;
+}
+
+
+body {
+  margin: 0;
+  background-color: $color-background;
+}
+
+aside {
+  display: none;
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+@media (min-width: $breakpoint-desktop) {
+  aside {
+    display: grid;
+    width: 25vw;
+    height: 100vh;
+    justify-items: center;
+    background-color: $color-sidebar;
+  }
+
+  .logo-container {
+    align-self: end;
+  }
+
+  /*================ NAV =======================*/
+
+  nav {
+    list-style: none;
+  }
+
+  .nav-item {
+    text-align: center;
+  }
+
+  .nav-link {
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: red;
+    }
+  }
+
+  .socials-container {
+    display: flex;
+  }
+}

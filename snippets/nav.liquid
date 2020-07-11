@@ -6,12 +6,12 @@
     Usage:
     {% include 'nav', linklist: section.settings.main_linklist %}
 {% endcomment %}
-<ul>
+<nav role="navigation">
   {% for link in linklists[linklist].links %}
-    <li> 
-      <a href="{{ link.url }}"> 
+    <div class="nav-item"> 
+      <a class="nav-link heading" href="{{ link.url }}"> 
         {{ link.title | escape }}
       </a>
-    </li>
+    </div>
   {% endfor %}
-</ul>
+</nav>
