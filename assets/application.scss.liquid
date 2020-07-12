@@ -65,22 +65,40 @@ body {
   background-color: $color-background;
 }
 
+main {
+  width: 100vw;
+}
+
 aside {
   display: none;
 }
 
-.icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  fill: red;
+header {
+  display: grid;
+  width: 100vw;
+  justify-items: center;
+  align-items: center;
+  background-color: $color-sidebar;
+  max-height: 62px;
+}
+
+.logo-container {
+  padding: 0.5rem 0rem;
 }
 
 @media (min-width: $breakpoint-desktop) {
+  body {
+    display: grid;
+    grid-template-columns: 25vw 75vw;
+  }
+
+  header {
+    display: none;
+  }
+
   aside {
     display: grid;
-    width: 25vw;
+    grid-template-rows: 1fr auto 2fr 1fr 1fr;
     height: 100vh;
     justify-items: center;
     background-color: $color-sidebar;
@@ -90,14 +108,18 @@ aside {
     align-self: end;
   }
 
-  /*================ NAV =======================*/
+  .divider {
+    height: 0.5rem;
+    border-bottom: 1px solid $color-main;
+  }
 
   nav {
-    list-style: none;
+    align-self: center;
   }
 
   .nav-item {
     text-align: center;
+    padding: 0.5rem;
   }
 
   .nav-link {
@@ -111,5 +133,16 @@ aside {
 
   .socials-container {
     display: flex;
+    justify-content: space-between;
+  }
+
+  .icon {
+    width: 25px;
+    padding: 0.5rem;
+    fill: $color-subheading;
+  }
+
+  footer {
+    align-self: end;
   }
 }
