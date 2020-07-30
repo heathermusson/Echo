@@ -1,4 +1,29 @@
-<h1>Collections</h1>
+{% if section.blocks.size > 0 %}
+  <div class="filters-container">
+    {% for block in section.blocks %}
+      {%- assign collection = collections[block.settings.collection] -%}
+      <div class="filter heading {% if forloop.first %} filter-selected {% endif %}" name="{{ collection.title }}">
+        {{- collection.title -}}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="products-container">
+    {% for block in section.blocks %}
+    {%- assign collection = collections[block.settings.collection] -%}
+      {% if collection.products.size > 0 %}
+        <div class="collection-container" name="{{ collection.title }}">
+          {% for product in collection.products limit:product_limit %}
+            {% include 'product-tile', product: product %}
+          {% endfor %}
+        </div>
+      {% else %}
+        Empty State
+      {% endif %}
+    {% endfor %}
+  </div>
+{% else %}
+  Empty state
+{% endif %}
 
 {% schema %}
 {

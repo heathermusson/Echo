@@ -1,0 +1,24 @@
+{% comment %}
+    Renders a product in a tile
+    Accepts:
+    - product: {Object} Product Liquid object (required)
+
+    Usage:
+    {% include 'product-tile', product: product %}
+{% endcomment %}
+<div class="product-tile" name="{{ product.title }}">
+  <img srcset="{% if product.featured_media.width >= 90 %}{{ product.featured_media | img_url: '90x' }} 90w,{% endif %}
+              {% if product.featured_media.width >= 180 %}{{ product.featured_media | img_url: '180x' }} 180w,{% endif %}
+              {% if product.featured_media.width >= 110 %}{{ product.featured_media | img_url: '110x' }} 110w,{% endif %}
+              {% if product.featured_media.width >= 220 %}{{ product.featured_media | img_url: '220x' }} 220w,{% endif %}"
+            sizes="(min-width: 750px) 110px, 90px"
+            src="{{ product.featured_media | img_url: '110x110' }}"
+            loading="lazy"
+            width="100%"
+            
+            class="product-card__image"
+            alt="{{ product.featured_media.alt | escape }}">
+  <div class="heading">{{ product.title }}</div>
+  <div class="body">{{ product.desc }}</div>
+  <div class="body">{{ product.price }}</div>
+</div>

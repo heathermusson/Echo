@@ -65,12 +65,12 @@ body {
   background-color: $color-background;
 }
 
-main {
-  width: 100vw;
-}
-
 aside {
   display: none;
+}
+
+main {
+  padding: 1rem;
 }
 
 header {
@@ -84,6 +84,33 @@ header {
 
 .logo-container {
   padding: 0.5rem 0rem;
+}
+
+.filters-container {
+  display: flex;
+}
+
+.filter {
+  background-color: $color-secondary-accent;
+  margin: 0.25rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 1rem;
+  color: $color-secondary;
+}
+
+.filter-selected {
+  background-color: $color-accent;
+}
+
+.collection-container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+.product-tile {
 }
 
 @media (min-width: $breakpoint-desktop) {
